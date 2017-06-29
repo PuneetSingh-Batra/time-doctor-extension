@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "TimeDoctor Chrome Extension",
+  "description": "A sample chrome extension for authenticating TimeDoctor API and make requests for users and their related tasks",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": {
+			"19": "icons/19.png",
+			"38": "icons/38.png"
+		},
+    "default_popup" : "fragments/popup.html"
+  },
+  "permissions" : [
+    "*://webapi.timedoctor.com/v1.1/*"
+  ],
+  "icons": {
+		"16": "icons/16.png",
+		"48": "icons/48.png",
+		"128": "icons/128.png"
+	},
+  "content_scripts": [
+  	{
+  		"matches": ["https://example.com/auth*"],
+  		"js": ["lib/jquery-1.9.1.min.js", "scripts/main.js"]
+  	}
+	]
+}
